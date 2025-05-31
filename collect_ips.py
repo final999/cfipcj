@@ -4,7 +4,7 @@ import re
 import os
 
 # 目标URL列表
-urls = ['https://monitor.gacjie.cn/page/cloudflare/ipv4.html', 
+urls = ['https://www.cloudflare.com/ips-v4', 
         'https://ip.164746.xyz'
         ]
 
