@@ -4,10 +4,10 @@ import re
 import os
 
 # 目标URL列表
-urls = ['https://monitor.gacjie.cn/page/cloudflare/ipv4.html', 
+urls = ['https://www.cloudflare.com/ips-v4', 
         'https://ip.164746.xyz'
         ]
-  # https://www.cloudflare.com/ips-v4
+  # https://www.cloudflare.com/ips-v4      https://monitor.gacjie.cn/page/cloudflare/ipv4.html
 # 正则表达式用于匹配IP地址
 ip_pattern = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
 
@@ -25,7 +25,7 @@ with open('ip.txt', 'w') as file:
         soup = BeautifulSoup(response.text, 'html.parser')
         
         # 根据网站的不同结构找到包含IP地址的元素
-        if url == 'https://monitor.gacjie.cn/page/cloudflare/ipv4.html':
+        if url == 'https://www.cloudflare.com/ips-v4':
             elements = soup.find_all('tr')
         elif url == 'https://ip.164746.xyz':
             elements = soup.find_all('tr')
