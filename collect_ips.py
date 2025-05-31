@@ -7,7 +7,7 @@ import os
 urls = ['https://www.cloudflare.com/ips-v4', 
         'https://ip.164746.xyz'
         ]
-response = requests.get(urls, verify=False)  # 禁用 SSL 验证
+
 # 正则表达式用于匹配IP地址
 ip_pattern = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
 
@@ -19,7 +19,7 @@ if os.path.exists('ip.txt'):
 with open('ip.txt', 'w') as file:
     for url in urls:
         # 发送HTTP请求获取网页内容
-        response = requests.get(url)
+        response = requests.get(url, verify=False)  # 禁用 SSL 验证
         
         # 使用BeautifulSoup解析HTML
         soup = BeautifulSoup(response.text, 'html.parser')
